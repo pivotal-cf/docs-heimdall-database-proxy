@@ -1,15 +1,29 @@
 ---
-title: Using YOUR-PRODUCT-NAME
+title: Using Heimdall Database Proxy for Pivotal Greenplum
 owner: Partners
 ---
 
-This topic describes how to use YOUR-PRODUCT-NAME.
+This topic describes how to use Heimdall Database Proxy for Pivotal Greenplum.
 
-##<a id='using'></a> Using YOUR-PRODUCT-NAME
+##<a id='using'></a> Using Heimdall Database Proxy for Pivotal Greenplum
 
-**This topic should include any instructions for how to use the service or dashboard created by the tile. 
-Give procedures for how to perform the different functions offered by your product and provide screenshots where necessary.** 
+The most common causes of problems that prevent the base install from working are:
 
-**You can also use this section to include information about Architecture and Troubleshooting for known errors. 
-If you include a Troubleshooting section, follow the Symptom/Explanation format used in the 
-[Okta Troubleshooting](http://docs.pivotal.io/p-identity/okta/troubleshooting.html) topic**.
+1.  Firewalls are blocking either port 8087, or the port to connect to Greenplum (generally 5432)
+2.  Access to download the necessary packages from the hdinstall script isn't available, often again due to firewalls
+3.  Not enough memory on the system in question to startup the management server and a proxy node
+4.  An old version of the OS is being used
+
+If you have difficulty bringing online the Heimdall Management Console or enabling the proxy, please contact [Heimdall Support] (mailto:support@heimdalldata.com)
+
+##<a id='documentation'></a> Documentation
+
+Further documentation of Heimdall configuration is provided as an online guide, and available once installed at http://<ip or host>:8087/docs/basics/login.html
+
+If an install hasn't been completed, current docs can typically be accessed from the following URL: http://demoa.heimdalldata.com:8087/docs/basics/login.html
+
+With each install, new and updated database specific information will be provided in our docs.  While the Greenplum specific distribution only provides the necessary modules for Greenplum and Postgres, the core software and documentation applies to all releases of Heimdall, so will document information for many databases as appropriate.
+
+
+
+

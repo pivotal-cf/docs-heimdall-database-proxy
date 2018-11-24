@@ -1,111 +1,122 @@
 ---
-title: YOUR-PRODUCT-NAME (Beta)
+title: Heimdall Database Proxy for Pivotal Greenplum (Beta)
 owner: Partners
 ---
 
 <p class="note warning">
 <strong>WARNING! </strong>
-The PRODUCT-NAME for PCF tile is currently in beta and is intended for evaluation and test purposes only. 
-Do not use this product in a PCF production environment.
+Heimdall Database Proxy for Pivotal Greenplum is currently in beta and is intended for evaluation and test purposes only. 
+Do not use this product in a production environment.
 </p>
-
-**This topic begins with a brief description of what the product tile (e.g. Apigee Edge Service Broker for PCF) does, 
-whereas the Overview section below describes what the service itself (e.g. Apigee Edge) does. See below for an example.**
-
-This documentation describes the Apigee Edge Service Broker for Pivotal Cloud Foundry (PCF). The Apigee Edge Service 
-Broker for PCF enables developers to manage APIs for their PCF apps through the Apigee Edge management console.
-
-**Note**: This description will appear under **OVERVIEW** in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io).
 
 ## <a id='overview'></a>Overview
 
-**The overview describes the service that your product offers to PCF developers. 
-Make sure to overview the features of the integration.
-Don't focus only on the overview of your product that is being integrated.
-See below for an example.**
+The Heimdall Database Proxy manages SQL traffic giving improved performance and reliability up to 100x. Heimdall transparently optimizes the performance of query reads and writes while ensuring your database environment is always online. 
 
-The Apigee Edge Service Broker for PCF registers a service broker with PCF and exposes its service plans on the 
-Marketplace. Developers can then create service plan instances using Apps Manager or the Cloud Foundry Command 
-Line Interface (cf CLI) and bind them to their apps.
-
-Creating an Apigee Edge for PCF service instance and binding it to an app creates an Apigee Edge API proxy that 
-handles requests for the app. This lets developers use the Apigee Edge management console to manage API request 
-handling between clients and the app.
-
-**Note**: This overview will appear under **OVERVIEW**, combined with the description above in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io).
+Deployment requires zero application code changes. Just point the application to Heimdall via an IP/port. 
 
 ## <a id='features'></a>Key Features
 
-**Note**: This feature list will appear under **FEATURES** in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io). 
-Make sure you list the key features of the tile (the integration). 
-We cannot accept a list of the key features of your product that we are integrating.
+Heimdall Database Proxy for Pivotal Greenplum includes the following key features:
 
-YOUR-PRODUCT-NAME includes the following key features:
-
-* Feature one
-* Feature two
-* Feature three
-
-
+* Offloads Pivotal Greenplum by batch processing, and effectively provides materialized views
+* Automates Write Master failover for Pivotal Greenplum
+* Intelligently caches and auto-invalidates into Pivotal GemFire
+* Routes diverse worksloads (i.e. OLAP, OLTP) for optimal performance
 
 ## <a id="snapshot"></a>Product Snapshot
 
-The following table provides version and version-support information about PRODUCT-NAME.
+The following table provides version and version-support information about Heimdall Database Proxy for Pivotal Greenplum.
 
 <table class="nice">
     <th>Element</th>
     <th>Details</th>
     <tr>
 	<td>Version Number</td>
-	<td>YOUR-INTEGRATION-VERSION-NUMBER</td>
+	<td>1.0</td>
     </tr>    
     <tr>
         <td>Release date</td>
-        <td>YOUR-RELEASE-DATE (Ex: July 1, 2019)</td>
+        <td>Dec 4, 2018</td>
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>YOUR-SOFTWARE-COMPONENT-VERSION-NUMBER</td>
+        <td>18.12.4.0</td>
     </tr>
     <tr>
         <td>Compatible Pivotal Greenplum version(s)</td>
-        <td>vYOUR-COMPATIBLE-PIVOTAL-GREENPLUM-VERSION (Ex. 2.2.x, 2.3.x, and 2.4.x)</td>
+        <td>All Pivotal Greenplum versions under active support are supported</td>
     </tr>
     <tr>
         <td>IaaS support</td>
-        <td>AWS?, Azure?, GCP?, OpenStack?, and vSphere?</td>
+        <td>AWS, Azure, GCP, OpenStack, vSphere and others.  Special integration is provided for AWS.</td>
     </tr>
     <tr>
-        <td>IPsec support?</td>
-        <td>[Yes or No]</td>
+        <td>IPsec support</td>
+        <td>NA (Relies on the underlying OS configuration)</td>
     </tr>
 </table>
 
 
 ## <a id="reqs"></a>Requirements
 
-**Provide any general or specific requirements, prerequisites, or dependencies here. 
-A general requirement might be something like, "An AppDynamics account." 
-A specific requirement might be something like, "Packaging Dependencies for Offline Buildpacks."**
+Heimdall Database Proxy for Pivotal Greenplum has the following requirements:
 
-YOUR-PRODUCT-NAME has the following requirements:
++ Java 8 or higher (When using Heimdall in a JDBC driver context, the application can run on Java 6+ if necessary)
 
-+ PREREQUISITE-1
++ 4 GB of RAM for a minimum install with caching
 
-+ PREREQUISITE-2
++ Pivotal Greenplum (all supported versions) and/or Postgres version 9.0 or higher
 
 ## <a id="limitations"></a>Limitations
 
-**List any known limitations.**
++ The features supported by the proxy are limited to those supported by the Postgres JDBC Driver, As the JDBC driver is used to provide connectivity to the back-end database.  Further documentation on this topic can be found at: https://jdbc.postgresql.org/
+
++ In order to cache a result-set, it must fit into the local heap of the proxy.
 
 ## <a id="feedback"></a>Feedback
 
 If you have a feature request, questions, or information about a bug, please email
-[Pivotal Cloud Foundry Feedback](mailto:cf-feedback@pivotal.io) list or send an email to YOUR-SUPPORT-EMAIL.
+[Pivotal Cloud Foundry Feedback](mailto:cf-feedback@pivotal.io) or send an email to [Heimdall Support] (mailto:support@heimdalldata.com).  Additional support options are available at: http://www.heimdalldata.com/support/.
 
 ## <a id='license'></a>License
 
-**List any license information here.**
++ A current copy of the license can always be found at:  http://www.heimdalldata.com/eula/
+
+This is a legal agreement (“AGREEMENT”) between the end-user customer (“you”), and the providing Heimdall entity (the applicable providing entity is hereinafter referred to as “HEIMDALL”). Your location of receipt of Heimdall product (hereinafter “PRODUCT”) and software maintenance (hereinafter “MAINTENANCE”) determines the providing entity hereunder. Heimdall Data, Inc., a Delaware corporation, licenses the PRODUCT and provides MAINTENANCE. Heimdall Data is a data access platform that optimizes, secures, and provides high availability for applications. By installing and/or using the product, you are agreeing to be bound by the terms of this agreement. Nothing contained in any purchase order or any other document submitted by you shall in any way modify or add to the terms and conditions contained in this AGREEMENT.
+
+1) PRODUCT LICENSES.
+
+1. License Grant. HEIMDALL hereby grants to you a non-exclusive, irrevocable, license to use PRODUCT (“License”). This License shall be nontransferable except in conjunction with a permitted assignment of this Agreement. You may: (i) use the PRODUCT in your and your Affiliate’s businesses; (ii) permit use of the PRODUCT by one or more third parties, including, without limitation, to perform information processing, disaster recovery, disaster recovery testing or other services for you, provided such third parties agree to keep the PRODUCT confidential; and (iii) permit use of the PRODUCT by persons with authorized access to your computer system, including, but not limited to, agents, auditors, temporary personnel, contracted personnel, consultants, suppliers and Affiliates.
+
+2. End User Licenses. Your license to the PRODUCT will be activated by license keys that allow use of the PRODUCT in increments defined by the license model purchased (“License Keys”). License Keys for other HEIMDALL products or other editions of the same PRODUCT may not be used to increase the allowable use for your edition of the PRODUCT.
+
+3. Partner Demo. If the PRODUCT is labeled “Partner Demo,” notwithstanding any term to the contrary in this AGREEMENT, your license permits use only if you are a current HEIMDALL authorized distributor or reseller, and then only for demonstration, test, or evaluation purposes in support of your end-user customers, and not for any other purpose, including without limitation customer training or production purposes. Note that a Partner Demo PRODUCT may disable itself upon the expiration of the License Key. In no event may a Partner Demo PRODUCT be used beyond expiration.
+
+4. If the PRODUCT is labeled “Evaluation,” notwithstanding any term to the contrary in this AGREEMENT, your license permits use only if you are an end user customer and then only for your internal demonstration, test, or evaluation purposes, and not for any other purpose, including without limitation production purposes. Your license is for ninety (90) days with NO RIGHT TO MAINTENANCE, ANY WARRANTY OR INFRINGEMENT INDEMNIFICATION. Note that an Evaluation PRODUCT may disable itself upon the expiration of the License Key. In no event may an Evaluation PRODUCT be used beyond expiration.
+
+5. Any product not licensed for end-user production use may be flagged in the license to report back to HEIMDALL for tracking purposes. The limit of this data will include license usage statistics, and system statistics and will not include database requests or other sensitive information. Users of non-production licenses agree to this data being provided to HEIMDALL without restriction.
+ 
+2) MAINTENANCE may be required and may need to be purchased separately. MAINTENANCE may include access to software-as-a-service (SaaS). MAINTENANCE begins on the date the License Keys for the PRODUCT are made available to you. Your plan shall continue for a one (1) year term or as specified by an executed purchase agreement. Your plan may be extended by your purchase of available annual renewals (the “MAINTENANCE Term”). During the initial or a renewal MAINTENANCE Term, HEIMDALL will:
+1. make any Updates for the PRODUCT covered by the plan available to you. An “Update” shall mean a generally available release of the same edition of the same PRODUCT which HEIMDALL makes available from time to time. Updates shall be considered to be a part of the PRODUCT and subject to the terms of this AGREEMENT, except that Updates are not covered by the Limited Warranty applicable to the PRODUCT, to the extent permitted by applicable law.
+2. supply corrections to you to correct PRODUCT malfunctions in order to bring product into conformity with the operating specifications for the then current version of the PRODUCT unless such malfunction shall have been caused by your unauthorized modification(s) of the PRODUCT or unless your unauthorized modification(s) prohibits or hampers such correction;
+3. provide telephone support to you in order to help you locate and, on its own, correct problems with the PRODUCT or assist in installation or operation of the PRODUCT;
+4. supply all extensions, enhancements, and other changes which are logical improvements or extensions to the PRODUCT and which HEIMDALL provides, without charge, to any other you of the PRODUCT.
+ 
+3) INFRINGEMENT INDEMNIFICATION. In the event of any claim, suit, or proceeding brought against you based on an allegation that a PRODUCT or consulting deliverable hereunder infringes upon any patent, copyright or trade secret of any third party (“Infringement Claim”), HEIMDALL shall defend, or at its option, settle such Infringement Claim, and shall pay all costs (including attorney’s fees) associated with the defense of such Infringement Claim, and all damages finally awarded or settlements undertaken by HEIMDALL in resolution of such Infringement Claim, provided you: promptly notify HEIMDALL in writing of your notification or discovery of an Infringement Claim such that HEIMDALL is not prejudiced by any delay in such notification; give HEIMDALL sole control over the defense or settlement of the Infringement Claim; and provide reasonable assistance in the defense of the same. Following notice of an Infringement Claim, or if HEIMDALL believes such a claim is likely, HEIMDALL may at its sole expense and option: (i) procure for you the right to continue to use the alleged infringing PRODUCT or consulting deliverable; (ii) replace or modify the PRODUCT or consulting deliverable to make it non-infringing; or (iii) accept return of the PRODUCT or consulting deliverable and, for the PRODUCT, provide you with a prorated refund using a three (3) year straight line depreciation basis, or, for the consulting deliverable, refund payments made for the deliverable. HEIMDALL assumes no liability for any Infringement Claims or allegations of infringement based on: (i) your use of any PRODUCT or consulting deliverable after notice that you should cease use of such PRODUCT or consulting deliverable due to an Infringement Claim; (ii) any modification of the PRODUCT or consulting deliverable by you or at your direction; (iii) your combination of the PRODUCT or consulting deliverable with non-HEIMDALL hardware, software, services, data or other content or materials if such Infringement Claim would have been avoided by the use of the PRODUCT or consulting deliverable alone. THE FOREGOING STATES YOUR EXCLUSIVE REMEDY WITH RESPECT TO ANY INFRINGEMENT CLAIM.
+ 
+4) LIMITED WARRANTY AND DISCLAIMER. HEIMDALL warrants that for a period of ninety (90) days from the date of delivery of the License Keys to you, the PRODUCT will perform substantially in accordance with the PRODUCT’S documentation published by HEIMDALL and included with the PRODUCT. HEIMDALL and its licensors’ and suppliers’ (“SUPPLIERS’”) entire liability and your exclusive remedy under this warranty (which is subject to your return of the PRODUCT to HEIMDALL or an authorized reseller) will be, at the sole option of HEIMDALL and subject to applicable law, to replace the PRODUCT or to refund the purchase price and terminate your license to the PRODUCT. This limited warranty does not cover any modification of the PRODUCT by you. HEIMDALL will provide MAINTENANCE technical support and consulting services in a professional and workmanlike manner, but HEIMDALL cannot guarantee that every question or problem raised by you will be resolved or resolved in a certain amount of time. Heimdall does not warrant in any form the results or achievements of the PRODUCT, technical support, consulting services or related deliverables. With respect to technical support, HEIMDALL’ and its SUPPLIERS’ entire liability and your exclusive remedy under this warranty is re-performance of the services. With respect to consulting services, HEIMDALL’ and its SUPPLIERS’ entire liability and your exclusive remedy under this warranty is re-performance of the services or, if re-performance is not possible or conforming, refund of amounts paid for the nonconforming services.
+ 
+5) TO THE EXTENT PERMITTED BY APPLICABLE LAW AND EXCEPT FOR THE ABOVE LIMITED WARRANTY, HEIMDALL AND ITS SUPPLIERS MAKE AND YOU RECEIVE NO WARRANTIES OR CONDITIONS, EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE; AND HEIMDALL AND ITS SUPPLIERS SPECIFICALLY DISCLAIM WITH RESPECT TO THE PRODUCT, MAINTENANCE AND ANY OTHER SOFTWARE OR SERVICE DELIVERED HEREUNDER, ANY CONDITIONS OF QUALITY, AVAILABILITY, RELIABILITY, SECURITY, LACK OF VIRUSES, BUGS, OR ERRORS, AND ANY IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, ANY WARRANTY OF TITLE, QUIET ENJOYMENT, QUIET POSSESSION, MERCHANTABILITY, NONINFRINGEMENT, OR FITNESS FOR A PARTICULAR PURPOSE.
+ 
+6) EXPORT RESTRICTION. You agree that you will not export, re-export, or import the PRODUCT, MAINTENANCE or any other software or service delivered hereunder in any form without the appropriate government licenses. You understand that under no circumstances may the PRODUCT, MAINTENANCE or any other software or service delivered hereunder be exported to any country subject to U.S. embargo or to U.S.-designated denied persons or prohibited entities or U.S. specially designated nationals.
+ 
+7) LIMITATION OF LIABILITY. EXCEPT FOR HEIMDALL’ INDEMNIFICATION OBLIGATIONS EXPRESSLY SET FORTH IN SECTION 4, AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, YOU AGREE THAT NEITHER HEIMDALL NOR ITS AFFILIATES, SUPPLIERS, OR AUTHORIZED DISTRIBUTORS SHALL BE LIABLE FOR ANY LOSS OF DATA OR PRIVACY, LOSS OF INCOME, LOSS OF OPPORTUNITY OR PROFITS, COST OF RECOVERY, LOSS, HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, ARISING FROM YOUR USE OF THE PRODUCT, MAINTENANCE OR ANY OTHER SOFTWARE OR SERVICE DELIVERED HEREUNDER, OR DAMAGE ARISING FROM YOUR USE OF THIRD PARTY PRODUCTS OR HARDWARE OR ANY OTHER SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR INDIRECT DAMAGES ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT; OR THE USE OF THE PRODUCT OR MAINTENANCE; OR YOUR EXPORTATION, REEXPORTATION, OR IMPORTATION OF THE PRODUCT, HARDWARE OR MAINTENANCE,. THIS LIMITATION WILL APPLY EVEN IF HEIMDALL, ITS AFFILIATES, SUPPLIERS, OR AUTHORIZED DISTRIBUTORS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. EXCEPT FOR HEIMDALL’ INDEMNIFICATION OBLIGATIONS EXPRESSLY SET FORTH IN SECTION 4, AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE TOTAL AGGREGATE LIABILITY OF HEIMDALL, ITS AFFILIATES, SUPPLIERS, OR AUTHORIZED DISTRIBUTORS EXCEED THE AMOUNT PAID FOR THE PRODUCT AND/OR MAINTENANCE TERM AT ISSUE. YOU ACKNOWLEDGE THAT THE PRODUCT AND MAINTENANCE FEES REFLECT THESE ALLOCATIONS OF RISK. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE LIMITATION OR EXCLUSION MAY NOT APPLY TO YOU. For purposes of this Section, the term “AFFILIATE” shall mean any legal entity fifty percent (50%) or more of the voting interests in which are owned directly or indirectly by HEIMDALL. AFFILIATES, SUPPLIERS, and authorized distributors are intended to be third party beneficiaries of this AGREEMENT.
+ 
+8) This AGREEMENT is effective until terminated. You may terminate this AGREEMENT at any time by removing the PRODUCT from your computers and destroying all copies and providing written notice to HEIMDALL with the serial numbers of the terminated License Keys. HEIMDALL may terminate this AGREEMENT at any time for your breach of this AGREEMENT if after thirty (30) days written notice of the breach or default the you do not correct or in good faith commence to correct same. Unauthorized copying of the PRODUCT or the accompanying documentation or otherwise failing to comply with the license grant of this AGREEMENT will result in automatic termination of this AGREEMENT and will make available to HEIMDALL all other legal remedies. You agree and acknowledge that your material breach of this AGREEMENT shall cause HEIMDALL irreparable harm for which monetary damages alone would be inadequate and that, to the extent permitted by applicable law, HEIMDALL shall be entitled to injunctive or equitable relief without the need for posting a bond. Upon termination of this AGREEMENT, the PRODUCT licenses granted hereunder will terminate and you must immediately destroy the PRODUCT and accompanying documentation, and all backup copies thereof. Any termination of consulting services is subject to the applicable scope definition, and you shall pay for services provided prior to the termination. All purchases are final with no right of refund, other than under the warranty or infringement indemnification terms of this AGREEMENT.
+ 
+9) CHOICE OF LAW AND VENUE. If the providing entity is Heimdall Data, Inc., this AGREEMENT will be governed by the laws of the State of California without reference to conflict of laws principles and excluding the United Nations Convention on Contracts for the International Sale of Goods, and in any dispute arising out of this AGREEMENT, you consent to the exclusive personal jurisdiction and venue in the State and Federal courts within Santa Clara County, California.
+ 
+10) HOW TO CONTACT HEIMDALL. Should you have any questions concerning this AGREEMENT or want to contact HEIMDALL for any reason, email support@heimdalldata.com; or write to: Heimdall Data, Inc., Customer Service, 37070 Newark Blvd., Suite A; Newark, CA. 94560
+ 
+11) This Agreement does not grant you the right to use any HEIMDALL trade or service mark.
