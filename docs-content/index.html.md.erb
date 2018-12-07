@@ -6,7 +6,7 @@ owner: Partners
 <p class="note warning">
 <strong>WARNING! </strong>
 Heimdall Database Proxy for Pivotal Greenplum is currently in beta and is intended for evaluation and test purposes only. 
-Do not use this product in a production environment.
+Do not use this product in a production environment without direct support from Heimdall.
 </p>
 
 ## <a id='overview'></a>Overview
@@ -22,11 +22,11 @@ Heimdall Database Proxy for Pivotal Greenplum includes the following key feature
 * Offloads Pivotal Greenplum by batch processing, and effectively provides materialized views
 * Automates Write Master failover for Pivotal Greenplum
 * Intelligently caches and auto-invalidates into Pivotal GemFire
-* Routes diverse worksloads (i.e. OLAP, OLTP) for optimal performance
+* Routes diverse workloads (i.e. OLAP, OLTP) for optimal performance
 
 ## <a id="snapshot"></a>Product Snapshot
 
-The following table provides version and version-support information about Heimdall Database Proxy for Pivotal Greenplum.
+The following table provides version and version-support information about Heimdall Database Proxy for Pivotal Greenplum:
 
 <table class="nice">
     <th>Element</th>
@@ -41,7 +41,7 @@ The following table provides version and version-support information about Heimd
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>18.12.4.0</td>
+        <td>18.12.4.2</td>
     </tr>
     <tr>
         <td>Compatible Pivotal Greenplum version(s)</td>
@@ -65,7 +65,7 @@ Heimdall Database Proxy for Pivotal Greenplum has the following requirements:
 
 ## <a id="limitations"></a>Limitations
 
-+ The features supported by the proxy are limited to those supported by the Postgres JDBC Driver, As the JDBC driver is used to provide connectivity to the back-end database.  Further documentation on this topic can be found at: https://jdbc.postgresql.org/
++ The features supported by the proxy are limited to those supported by the Postgres JDBC Driver, As the JDBC driver is used to provide connectivity to the back-end database.  Further documentation on this topic can be found at: https://jdbc.postgresql.org/.
 
 + In order to cache a result-set, it must fit into the local heap of the proxy.
 

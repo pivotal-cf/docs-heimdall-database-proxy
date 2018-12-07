@@ -9,27 +9,39 @@ This topic describes how to install and configure Heimdall Database Proxy for Pi
 
 To install the Heimdall Database Proxy for Pivotal Greenplum installation, do the following:
 
-1. Download the product file from Pivotal Network.
+1. Download the product file from Pivotal Network (heimdall-gp.zip).
 
-1. Upload the install package to either the Greenplum master database node, OR to a seperate Linux system (Ubuntu 16.04+ is preferred but others are supported) in /opt
+1. Upload the install package to either the Greenplum master database node, OR to a separate Linux system (Ubuntu 16.04+ is preferred but others are supported) in /opt.
 
-1. Execute "sudo unzip heimdall-gp.zip", to unzip the Heimdall package to /opt/heimdall
+1. Unzip the heimdall package to /opt/heimdall:
 
-1. cd to /opt/heimdall
+```Bash
+sudo unzip heimdall-gp.zip
+```
 
-1. Execute "sudo hdinstall.sh"
+1. Change directory to the heimdall directory:
+
+```Bash
+cd /opt/heimdall
+```
+
+1. Execute the heimdall installer to setup the system environment:
+
+```Bash
+sudo hdinstall.sh
+```
 
 1. Verify that port 8087 is being listened on (this is the default management port) with:
 
-    ```
-    #sudo netstat -alnp | grep 8087.*LIST
-    tcp6       0      0 :::8087                 :::*                    LISTEN      1577/java
-    ```
+```Bash
+sudo netstat -alnp | grep 8087.*LIST
+tcp6       0      0 :::8087                 :::*                    LISTEN      1577/java
+```
     
-1. Connect using a browser to the IP of the instance installed on, on port 8087, i.e. http://host:8087/
+1. Connect using a browser to the IP of the instance installed on, on port 8087, i.e. http<scan>:</scan>//host:8087/.
 
-1. Review the documentation at http://host:8087/docs/basics/login.html for help in logging into the GUI
+1. Review the documentation at http<scan>:</scan>//host:8087/docs/basics/login.html for help in logging into the GUI.
 
-1. Use the wizard to configure the details about your database cluster.
+1. Use the wizard to configure the details about your database cluster (select Postgres as the database type for Greenplum).
 
 1. When the wizard is complete, you can use the data source test button and the vdb tester to validate that basic configuration is complete.
