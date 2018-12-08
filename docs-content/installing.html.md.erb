@@ -15,25 +15,25 @@ To install the Heimdall Database Proxy for Pivotal Greenplum installation, do th
 
 1. Unzip the heimdall package to /opt/heimdall:
 
-```Bash
+    ```Bash
 sudo unzip heimdall-gp.zip
 ```
 
 1. Change directory to the heimdall directory:
 
-```Bash
+    ```Bash
 cd /opt/heimdall
 ```
 
 1. Execute the heimdall installer to setup the system environment:
 
-```Bash
+    ```Bash
 sudo hdinstall.sh
 ```
 
 1. Verify that port 8087 is being listened on (this is the default management port) with:
 
-```Bash
+    ```Bash
 sudo netstat -alnp | grep 8087.*LIST
 tcp6       0      0 :::8087                 :::*                    LISTEN      1577/java
 ```
