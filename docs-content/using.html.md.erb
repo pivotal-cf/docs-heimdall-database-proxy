@@ -5,28 +5,46 @@ owner: Partners
 
 This topic describes how to use Heimdall Database Proxy for Pivotal Greenplum.
 
-##<a id='using'></a> Getting Started with Heimdall Database Proxy for Pivotal Greenplum
+##<a id='using'></a> Get Started with Heimdall Database Proxy for Pivotal Greenplum
 
-In order to start using the software, please login to the UI, then select the wizard tab on the left.  The wizard will guide you through configuring your data sources, cache settings, and what features should be configured by default.  
-When using Greenplum, select Postgres as the database type.
+To start using the software, do the following:
 
-Since the features of each new version of the Heimdall Database Proxy for Pivotal Greenplum are rapidly evolving, 
-refer to the online documentation that is available upon installing the package for 
-additional information on the features supported and their configurations.
+1. Log in to the UI.
 
+2. Select the wizard tab on the left.
 
-This documentation will be found at http<scan>:</scan>//host:8087/docs/basics/login.html, and Greenplum specific information will be available at http<scan>:</scan>//host:8087/docs/configuration/greenplum.html.
+3. Use the wizard to guide you through configuring your data sources, cache settings,
+   and what features should be configured by default.  
+   When using Greenplum, select Postgres as the database type.
 
-If the software has not yet been installed, an updated copy of the documentation for the current release of code is available at http://demoa.heimdalldata.com:8087/docs/basics/login.html for reference.
+Because the features of each new version of the Heimdall Database Proxy for Pivotal Greenplum are rapidly evolving, 
+see the online documentation that is available after you install the package.
+The online documentation contains additional information on the features supported and their configurations.
+
+This documentation is found at http<scan>:</scan>//host:8087/docs/basics/login.html
+and Greenplum specific information is available at http<scan>:</scan>//host:8087/docs/configuration/greenplum.html.
+
+If the software has not yet been installed, an updated copy of the documentation for the current release
+of code is available at http://demoa.heimdalldata.com:8087/docs/basics/login.html for reference.
 
 
 ##<a id='troubleshooting'></a>Troubleshooting an Initial Install
 
 The most common causes of problems that prevent the base install from working are:
 
-1.  Firewalls are blocking either port 8087, or the port to connect to Greenplum (generally 5432).  If in AWS, please verify these ports are  open in the security group being used.
-2.  Access to download the necessary packages from the hdinstall script isn't available, often again due to firewalls.  The hdinstall script leverages the built-in package management system for Debian/Ubuntu, Redhat/Centos, and Suse systems to install software such as Java.  If these standard packages are not available through the dependency manager, or if the system is not connected to the Internet, please contact [Heimdall Support] (mailto:support@heimdalldata.com) for assistance in installing these in an offline manner.
+1.  Firewalls are blocking either port 8087, or the port to connect to Greenplum (generally 5432).
+    If in AWS, please verify these ports are  open in the security group being used.
+
+2.  Access to download the necessary packages from the hdinstall script is not available,
+    often again due to firewalls.
+    The hdinstall script leverages the built-in package management system for Debian/Ubuntu, Redhat/Centos,
+    and Suse systems to install software such as Java.
+    If these standard packages are not available through the dependency manager
+    or if the system is not connected to the Internet, contact [Heimdall Support] (mailto:support@heimdalldata.com)
+    for assistance in installing these in an offline manner.
+
 3.  Not enough memory on the system in question to startup the management server and a proxy node.
+
 4.  An old version of the OS is being used and the dependencies are insufficient for Heimdall (i.e. Java 7 is loaded, not Java 8).
 
 If you have difficulty bringing online the Heimdall Management Console or enabling the proxy, 
