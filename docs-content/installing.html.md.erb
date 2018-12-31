@@ -11,7 +11,9 @@ To install the Heimdall Database Proxy for Pivotal Greenplum installation, do th
 
 1. Download the product file from Pivotal Network (heimdall-gp.zip).
 
-1. Upload the install package to either the Greenplum master database node, OR to a separate Linux system (Ubuntu 16.04+ is preferred but others are supported) in /opt.
+1. Upload the install package to either the Greenplum master database node
+   or a separate Linux system (Ubuntu 16.04+ is preferred but others are supported) in /opt.
+
 
 1. Unzip the heimdall package to /opt/heimdall:
 
@@ -42,6 +44,6 @@ tcp6       0      0 :::8087                 :::*                    LISTEN      
 
 1. Review the documentation at http<scan>:</scan>//host:8087/docs/basics/login.html for help in logging into the GUI.
 
-1. Use the wizard to configure the details about your database cluster (select Postgres as the database type for Greenplum).
+1. Use the wizard to configure the details about your database cluster. Select Postgres as the database type for Greenplum.
 
-1. When the wizard is complete, you can use the data source test button and the vdb tester to validate that basic configuration is complete.
+1. When the wizard is complete, use the data source test button and the vdb tester to validate that basic configuration is complete.

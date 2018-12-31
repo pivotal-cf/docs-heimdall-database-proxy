@@ -11,7 +11,8 @@ Do not use this product in a production environment without direct support from 
 
 ## <a id='overview'></a>Overview
 
-The Heimdall Database Proxy manages SQL traffic giving improved performance and reliability up to 100x. Heimdall transparently optimizes the performance of query reads and writes while ensuring your database environment is always online. 
+The Heimdall Database Proxy manages SQL traffic giving improved performance and reliability up to 100x.
+Heimdall transparently optimizes the performance of query reads and writes while ensuring your database environment is always online. 
 
 Deployment requires zero application code changes. Just point the application to Heimdall via an IP/port. 
 
@@ -65,7 +66,10 @@ Heimdall Database Proxy for Pivotal Greenplum has the following requirements:
 
 ## <a id="limitations"></a>Limitations
 
-+ The features supported by the proxy are limited to those supported by the Postgres JDBC Driver, As the JDBC driver is used to provide connectivity to the back-end database.  Further documentation on this topic can be found at: https://jdbc.postgresql.org/.
++ The features supported by the proxy are limited to those supported by the Postgres JDBC Driver.
+  The JDBC driver is used to provide connectivity to the back-end database. 
+  For more information about the PostgreSQL JDBC driver,
+  see the [PostgreSQL documentation](https://jdbc.postgresql.org/).
 
 + In order to cache a result-set, it must fit into the local heap of the proxy.
 
